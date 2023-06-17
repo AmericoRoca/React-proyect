@@ -21,7 +21,7 @@ const ToDo = ({ item, onUpdate, onDelete }) => {
 
   function formEdit() {
     return (
-      <form className='toDoUpdateForm' onSubmit={handleSubmit}>
+      <form className='todoUpdateForm' onSubmit={handleSubmit}>
         <input
           type='text'
           className='toDoInput'
@@ -36,9 +36,9 @@ const ToDo = ({ item, onUpdate, onDelete }) => {
   function toDoElement() {
     return (
       <div className='toDoInfo'>
-        {item.title}
-        <button onClick={() => setIsEdit(true)}>Editar</button>
-        <button onClick={(e)=> onDelete(item.id)}>Eliminar</button>
+        <span className='todoTitle'>{item.title}</span>
+        <button className="button" onClick={() => setIsEdit(true)}>Editar</button>
+        <button className="buttonDelete"  onClick={(e)=> onDelete(item.id)}>Eliminar</button>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import ToDo from './ToDo';
+import '../css/ToDoApp.css'
 
 
 
@@ -46,15 +47,15 @@ export default function ToDoApp(){
 
         setToDos(temp);
     }
-    
+
     return (
-        <div className='container'>
-            <form className="toDoCreateForm" onSubmit={handleSubmit}>
-            <input onChange={handleChange} value={title}/>
+        <div className='todoContainer'>
+            <form className="todoCreateForm" onSubmit={handleSubmit}>
+            <input className="todoInput" onChange={handleChange} value={title}/>
             <input type="submit" value="Crear" className="buttonCreate" onClick={handleSubmit}/>
             </form>
 
-            <div className='toDosContainer'>
+            <div className='todosContainer'>
                 {
                     toDos.map(item => (
                         <ToDo key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}/>
